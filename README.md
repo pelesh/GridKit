@@ -1,9 +1,11 @@
 # GridKit™
 
-This is experimental code for prototyping interfaces for dynamic 
-simulations, sensitivity analysis and optimization. Target applications 
-are power grids, but the methodology and the framework could be used 
-in other areas without major modifications. 
+The objective of GridKit™ is to provide a modeling framework for power
+systems simulations and analysis that can support multiple advanced
+analysys methods, such as dynamic constrained optimization and partitioned
+numerical integrators for systems of differential and algebraic equations.
+While target applications are power grids, but the methodology and the
+framework could be used in other areas without major modifications. 
 
 ## Installation Guide
 
@@ -14,9 +16,13 @@ Before installing GridKit™ make sure you have all needed dependencies.
 ### Dependencies
 You should have all of the following installed before installing GridKit™
 - A version of
-	- [SUNDIALS](https://github.com/LLNL/sundials) >= 6.0.0
-	- [Suitesparse](https://github.com/DrTimothyAldenDavis/SuiteSparse) >= 5.x (optional)
-	- [Ipopt](https://github.com/coin-or/Ipopt) >= 3.x (optional)
+    - [SUNDIALS](https://github.com/LLNL/sundials) >= 7.0.0
+    - [Suitesparse](https://github.com/DrTimothyAldenDavis/SuiteSparse) >= 5.x (optional)
+        - If using Suitesparse, SUNDIALS must also be built with [KLU support](https://sundials.readthedocs.io/en/latest/sundials/Install_link.html#cmakeoption-ENABLE_KLU)
+    - [Ipopt](https://github.com/coin-or/Ipopt) >= 3.x (optional)
+    - [Enzyme](https://github.com/EnzymeAD/Enzyme) >=0.0.131 (optional)
+        - [LLVM](https://github.com/llvm/llvm-project) >= 15.x. GridKit is
+          currently tested with LLVM 16. 
 - [CMake](https://cmake.org/) >= 3.12
 - C++ 17 compliant compiler
 
@@ -44,5 +50,8 @@ as functionality test and executed by running `ctest` in the build directory.
 
 ## Contributors
 
-GridKit™ is written by Slaven Peles (peless@ornl.gov) and has received contributions
-from Tamara Becejac (Avangrid), R. Cameron Rutherford (PNNL), Asher J. Mancinelli (NVIDIA), and Reid Gomillion (Virginia Tech).
+GridKit™ is written by Slaven Peles (peless@ornl.gov) and has received
+contribution from Abdourahman Barry (Virginia Tech), Tamara Becejac (Avangrid),
+Adam Birchfield (Texas A&M), Reid Gomillion (Virginia Tech), Nicholson
+Koukpaizan (ORNL), Asher J. Mancinelli (NVIDIA), Alex Novotny (Virginia Tech),
+Shaked Regev (ORNL), and R. Cameron Rutherford (PNNL).
